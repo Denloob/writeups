@@ -1,4 +1,4 @@
-# CTF Writeups from the Shalom Hucking Edition Team
+# My CTF Writeups
 
 ## 2023
 * [2023.12.18 **The Cyber Cooperative CTF 2023**](2023-12-18-thecybercoopctf)

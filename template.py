@@ -7,7 +7,9 @@ from pathlib import Path
 from datetime import datetime
 
 CTF_README_TEMPLATE = (
-    lambda name: f"""# {name}
+    lambda name, team_name: f"""# {name}
+
+**Team:** {team_name}
 
 ### Table of contents
 
@@ -72,7 +74,7 @@ def add_ctf(args):
 
     ctf_dir.mkdir()
 
-    content = CTF_README_TEMPLATE(args.name)
+    content = CTF_README_TEMPLATE(args.name, args.team)
 
     (ctf_dir / README_FILE).write_text(content)
 
@@ -105,6 +107,7 @@ def main():
     ctf = subparsers.add_parser("ctf", description="Add a CTF template")
     ctf.add_argument("slug", help="CTF slug, like 'examplectf'")
     ctf.add_argument("name", help="CTF name, like 'Example CTF 2023'")
+    ctf.add_argument("team", help="Team name, like 'Example Team'")
     ctf.set_defaults(func=add_ctf)
 
     chal = subparsers.add_parser(
