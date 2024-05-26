@@ -1,4 +1,4 @@
-# bbsqli
+# bbsqli \[421 Points] (43 Solves)
 ```
 SO Classic !
 
