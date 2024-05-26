@@ -6,3 +6,4 @@ _**14th** place/**497** teams_
 ### Table of contents
 
 * [bbsqli (web)](bbsqli)
+* [fire checker (misc)](fire-checker)
