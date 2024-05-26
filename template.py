@@ -52,7 +52,7 @@ def add_ctf(args):
         if prev_year_markdown in readme_text:
             readme_text = readme_text.replace(
                 prev_year_markdown,
-                f"{year_markdown}\n{prev_year_markdown}",
+                f"{year_markdown}\n\n{prev_year_markdown}",
             )
         else:
             raise RuntimeError(
