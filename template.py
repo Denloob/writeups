@@ -7,9 +7,10 @@ from pathlib import Path
 from datetime import datetime
 
 CTF_README_TEMPLATE = (
-    lambda name, team_name: f"""# {name}
+    lambda name, team_name, place, team_count: f"""# {name}
 
-**Team:** {team_name}
+**Team:** {team_name} \\
+_**{place}th** place/**{team_count}** teams_
 
 ### Table of contents
 
@@ -42,7 +43,7 @@ def add_ctf(args):
     readme_text = readme.read_text()
 
     time_dot_sep = time.replace("-", ".")
-    headline = f"* [{time_dot_sep} **{args.name}**]({ctf_dir_name})"
+    headline = f"* [{time_dot_sep} **{args.name}** (_{args.place}th place/{args.team_count} teams_)]({ctf_dir_name})"
 
     year = datetime.now().year
     year_markdown = f"## {year}"
@@ -74,7 +75,7 @@ def add_ctf(args):
 
     ctf_dir.mkdir()
 
-    content = CTF_README_TEMPLATE(args.name, args.team)
+    content = CTF_README_TEMPLATE(args.name, args.team, args.place, args.team_count)
 
     (ctf_dir / README_FILE).write_text(content)
 
@@ -108,6 +109,8 @@ def main():
     ctf.add_argument("slug", help="CTF slug, like 'examplectf'")
     ctf.add_argument("name", help="CTF name, like 'Example CTF 2023'")
     ctf.add_argument("team", help="Team name, like 'Example Team'")
+    ctf.add_argument("place", help="Place achieved during the CTF, like '2'")
+    ctf.add_argument("team_count", metavar="team-count", help="How many teams competed, like '382'")
     ctf.set_defaults(func=add_ctf)
 
     chal = subparsers.add_parser(
