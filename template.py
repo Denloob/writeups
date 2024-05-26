@@ -24,6 +24,23 @@ MAIN_README_TEMPLATE = (
 """
 )
 
+CHAL_TEMPLATE = (
+    lambda name: f"""# {name}
+```
+description here
+```
+---
+
+TL;DR \
+
+## Writeup
+
+
+
+**Flag:**
+"""
+)
+
 README_FILE = "README.md"
 
 
@@ -95,7 +112,7 @@ def add_chal(args):
     slug = args.chal.lower().replace("/", "_").replace(" ", "-")
     chal_dir = ctf_dir / slug
     chal_dir.mkdir()
-    (chal_dir / README_FILE).write_text(f"# {args.chal}")
+    (chal_dir / README_FILE).write_text(CHAL_TEMPLATE(args.chal))
 
     with open(ctf_dir / README_FILE, "a") as readme:
         readme.write(f"* [{args.chal} ({args.category})]({slug})\n")
