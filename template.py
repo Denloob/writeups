@@ -25,7 +25,7 @@ MAIN_README_TEMPLATE = (
 )
 
 CHAL_TEMPLATE = (
-    lambda name: f"""# {name}
+    lambda name: f"""# {name} \\[X Points] (X Solves)
 ```
 description here
 ```
