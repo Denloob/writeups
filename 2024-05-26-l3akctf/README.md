@@ -7,3 +7,4 @@ _**14th** place/**497** teams_
 
 * [bbsqli (web)](bbsqli)
 * [fire checker (misc)](fire-checker)
+* [Magic Trick (misc)](magic-trick)
