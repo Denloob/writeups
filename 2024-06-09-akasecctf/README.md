@@ -7,3 +7,4 @@ _**15th** place/**696** teams_
 
 * [zop (pwn)](zop)
 * [proxy-for-life (web)](proxy-for-life)
+* [so_long (misc)](so_long)
