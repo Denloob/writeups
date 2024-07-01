@@ -21,3 +21,4 @@ Sadly it's not on ctftime so here's the final scoreboard for you
 ### Table of contents
 
 * [Hooked on a Flag (mobile)](hooked-on-a-flag)
+* [Dungeon (rev)](dungeon)
