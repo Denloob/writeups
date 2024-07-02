@@ -126,4 +126,9 @@ io.interactive()
 
 **Flag:** `vsctf{4nd_th3_st4r5_4l1gn_0nc3_m0r3}`
 
+## Intended solution
+This solution is much easier to find and to exploit than the intended one,
+so the **author released a revenge version** of the challenge with this flaw patched,
+which I also solved and **have a writeup [here](../cosmic-ray-v3-revenge/README.md)**.
+
 [^1]: https://en.wikipedia.org/wiki/Soft_error
