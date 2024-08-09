@@ -10,3 +10,4 @@ _**15th** place/**696** teams_
 * [so_long (misc)](so_long)
 * [format (misc)](format)
 * [risks (rev)](risks)
+* [lost (crypto)](lost)
