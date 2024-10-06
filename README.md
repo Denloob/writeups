@@ -1,6 +1,7 @@
 # My CTF Writeups
 
 ## 2024
+* [2024.09.29 **DefCamp CTF** (_12th place/776 teams_)](2024-09-29-defcampctf)
 * [2024.07.07 **DownUnder CTF** (_143th place/1515 teams_)](2024-07-07-ductf)
 * [2024.06.27 **BsidesTLV CTF** (_2th place/107 teams_)](2024-06-27-bsidestlvctf)
 * [2024.06.15 **vsCTF** (_30th place/964 teams_)](2024-06-15-vsctf)
