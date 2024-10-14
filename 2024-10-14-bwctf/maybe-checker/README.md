@@ -172,7 +172,7 @@ So now we can write a `z3` script!
 from z3 import *
 
 FLAG_LEN = 48
-flag = [BitVec("flag_%d" % i, 8) for i in range(FLAG_LEN )]
+flag = [BitVec("flag_%d" % i, 32) for i in range(FLAG_LEN)] # NOTE: See footnote [1]
 
 conditions = [
     flag[0 + 0] == 98,
@@ -200,20 +200,14 @@ while solver.check() == sat:
     solution_history.add(result_str)
     print(result_str)
 ```
+[^1]
 
-Running the script we get 4 outputs
-```
-bwctf{WE1C0-M3T0B-1U3W4-T3RCT-FH0@3-Y0UH4-VEFUN}
-bwctf{WE1C0-M3T0B-1U3W4-T3RCT-FH003-Y0UH4-VEFUN}
-bwctf{WE1C0-M3T0B-1U3W4-T3RCT-FH0P3-Y0UH4-VEFUN}
-bwctf{WE1C0-M3T0B-1U3W4-T3RCT-FH0 3-Y0UH4-VEFUN}
-```
-
-Assuming the flag doesn't contain spaces, and trying the other 3 possibilities,
-the ctf site accepted the third one.
+Running the script we get the flag
 
 Success!
 
 **Flag:** `bwctf{WE1C0-M3T0B-1U3W4-T3RCT-FH0P3-Y0UH4-VEFUN}`
 
-*For the full scripts see [dump.py](./dump.py), [solve.ida.py](./solve.ida.py) and [solve.z3.py](./solve.z3.py)
+*For the full scripts see [dump.py](./dump.py), [solve.ida.py](./solve.ida.py) and [solve.z3.py](./solve.z3.py)*
+
+[^1]: as SuperFashi (the author of the chal) pointed out after the CTF, the multiplication is done on 32 bit values, not on 8 bit! If we used 8 bit, we would get 4 solutions instead of 1.

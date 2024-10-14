@@ -2,7 +2,7 @@
 from z3 import *
 
 FLAG_LEN = 48
-flag = [BitVec("flag_%d" % i, 8) for i in range(FLAG_LEN )]
+flag = [BitVec("flag_%d" % i, 32) for i in range(FLAG_LEN)]
 
 conditions = [
     flag[0 + 0] == 98,
